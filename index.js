@@ -1,4 +1,4 @@
-const fs = require('node:fs');
+const fs = require('node:fs'); 
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
@@ -45,7 +45,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.data.name);
-	const defaultCooldownDuration = 3;
+	const defaultCooldownDuration = 0.5;
 	const cooldownAmount = (command.cooldown ?? defaultCooldownDuration) * 1000;
 
 	if (timestamps.has(interaction.user.id)) {

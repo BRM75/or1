@@ -19,9 +19,11 @@ module.exports = {
 
             const tempKelvin = data.main.temp; // OWM returns temperatures in Kelvin...
             const tempFahrenheit = Math.round((tempKelvin - 273.15) * 1.8 + 32); // ...so we have to convert it to Fahrenheit
+            const tempCelsius = Math.round((tempFahrenheit - 32) * 5/9 ) // hi craz!!1
 
             const feelsLikeKelvin = data.main.feels_like;
             const feelsLikeFahrenheit = Math.round((feelsLikeKelvin - 273.15) * 1.8 + 32);
+            const feelslikeCelsius = Math.round((feelsLikeFahrenheit - 32) * 5/9 )
 
             const weatherDescription = data.weather[0].main;
             const weatherCondition = weatherDescription === 'Clouds' ? 'Cloudy' :
@@ -47,8 +49,8 @@ module.exports = {
             const cityName = data.name;
             
             const message = tempFahrenheit === feelsLikeFahrenheit ?
-                `${weatherCondition} ${temperatureFeel} with a temperature of ${tempFahrenheit}°F at ${cityName}.` :
-                `${weatherCondition}${dewPointFeel} ${temperatureFeel} with a temperature of ${tempFahrenheit}°F at ${cityName}. Feels like ${feelsLikeFahrenheit}°F.`;
+                `${weatherCondition} ${temperatureFeel} with a temperature of ${tempFahrenheit}°F (${tempCelsius})°C at ${cityName}.` :
+                `${weatherCondition}${dewPointFeel} ${temperatureFeel} with a temperature of ${tempFahrenheit}°F (${tempCelsius}°C) at ${cityName}. Feels like ${feelsLikeFahrenheit}°F (${feelslikeCelsius}°C).`;
 
             interaction.reply(message);
         } catch (error) {

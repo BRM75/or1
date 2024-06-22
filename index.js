@@ -8,8 +8,14 @@ const wordReplacements = { // lol
     hi: ['die', 'salutations', 'cry'],
     world: ['volcano', 'rock', 'hell'],
     discord: ['snapchat', 'xvideos', 'myspace'],
+    out: ['in'],
+    him: ['clock', 'john cena', 'ooger'],
+    her: ['grandma', 'raisins', 'free palestine'],
+    the: ['big baby', 'dancing baby', 'og', 'wa'],
     kill: ['eat', 'lick', 'shove'],
+    and: ['shovel', 'garage'],
     yourself: ['your mom'],
+    or: ['or', ']æõÀÃ='],
     loser: ['television', 'billionaire', 'programmer', 'dropshipper'],
     american: ['queer', 'black person', 'indian'],
     hate: ['love', 'appreciate'],
@@ -23,36 +29,47 @@ const wordReplacements = { // lol
     dumb: ['smart', 'high iq', 'me'],
     stupid: ['your likes are now private', 'super'],
     angry: ['twitter'],
+    mad: ['twitter'],
+    hate: ['love', 'like','lust for'],
+    are: ['am'],
+    you: ['i', 'me', 'ogre'],
+    on: ['au']
 };
 
 const letterReplacements = { // lol X2
     b: ['d', 'p', 'β'],
     x: ['ks', '❌', 'x', 'ks', 'x'],
-    as: ['ass'],
-    oo: ['U', 'o', 'uu'],
-    ra: ['re'],
-    are: ['am'],
-    you: ['i', 'me'],
-    e: ['ee', 'egg', 'e'],
-    h: ['ha', 'eich', 'hee', 'h'],
-    o: ['oh', 'o'],
-    a: ['a', 'Æ', 'AA', 'a', 'e', 'a', 'ay', 'a'],
+    as: ['ass', 'buttocks'],
+    oo: ['U', 'o', 'uu', 'wÿ¤', '[][][][][][]'],
+    ra: ['re', ' 𓀀 𓀁 𓀂 𓀃 𓀄'],
+    e: ['ee', 'egg', 'EA', 'zÒ—^ÿ', 'ìd¯|', '¬øcl', '👈', '👇','👉',],
+    h: ['ha', 'eich', 'hee', 'h', 'Ê7gè÷Æ'],
+    o: ['oh', '))', '', '[[', ,'😭','💯','🤘','0','00OOOÆÆ'],
+    a: ['', 'Æ', 'AA', 'a', 'e', 'a', 'ay', '', '😁','🤣','🥰',],
     g: ['j', 'guh', 'j', 'g', 'g', 'g'],
-    p: [' p ', 'pee'],
+    p: [' p ', 'pee', 'P', 'PLAYSATION 4', 'p', 'OOO'],
     v: ['w', "v"],
     i: ["İ", "i"],
-    w: ['m', "www", "w", "w"],
+    w: ['m', "www", "w", "wWw"],
     f: ['²|DÁ', 'fuck', 'ASFDFJDSKDNVK', 'PH', 'free', 'ff', "³ò>öãOv", "Àïl", "f", "f", "f", "f"],
     is: ['ÃwÆÂ'],
     ea: ['ae'],
-    t: ['⍑', 't', 't', '☂', 't'],
-    mr: ['mr.beast']
+    d: ['b'],
+    m: ['monday', 'money', 'þ&>|¨', 'ð'],
+    t: ['⍑', '////', 't', '☂', 'ô>', 'teee'],
+    mr: ['mrbeast'],
+    c: ['ses', '', 'S', 'sex', 'k', 'ↄ'],
+    1: ['E', '}', '|', '!', 'þ'],
+    2: ['3', '5', '1', 'EIGHT'],
+    5: ['task manager', '💀', '👃'],
+    6: ['sex', '(six)', 'RAGED.'],
+    0: ['💯', '1', 'a lot', 'O']
 };
 
 function getRandomReplacement(item, replacementsMap) {
     const replacements = replacementsMap[item.toLowerCase()];
     if (!replacements || replacements.length === 0) {
-        return item; // Return the original character if no replacements are defined
+        return item; // Return the original item if no replacements are defined :frowning2:
     }
     return replacements[Math.floor(Math.random() * replacements.length)];
 }

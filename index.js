@@ -49,10 +49,10 @@ const letterReplacements = { // lol X2
     mr: ['mr.beast']
 };
 
-function getRandomReplacement(character) {
-    const replacements = wordReplacements[character.toLowerCase()];
+function getRandomReplacement(item, replacementsMap) {
+    const replacements = replacementsMap[item.toLowerCase()];
     if (!replacements || replacements.length === 0) {
-        return character; // Return the original character if no replacements are defined
+        return item; // Return the original character if no replacements are defined
     }
     return replacements[Math.floor(Math.random() * replacements.length)];
 }

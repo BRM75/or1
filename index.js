@@ -8,7 +8,7 @@ const wordReplacements = { // lol
     hi: ['die', 'salutations', 'cry'],
     world: ['volcano', 'rock', 'hell'],
     discord: ['snapchat', 'xvideos', 'myspace'],
-    kill: ['eat', 'lick', 'shove'], // !!WARNING!! this might seem offensive (kinda are), but the obscenities get replaced!
+    kill: ['eat', 'lick', 'shove'],
     yourself: ['your mom'],
     loser: ['television', 'billionare', 'programmer', 'dropshipper'],
     american: ['queer', 'black person', 'indian'],
@@ -106,19 +106,23 @@ client.on('messageCreate', (message) => {
 
     if (message.content.startsWith('%say')) {
         const text = message.content.slice('%say'.length).trim(); // Extract text after '%say'
-    
+
         if (!text) {
             message.channel.send('ENTER SOMETHING!!1');
             return;
         }
-    
-        let replacedText = '';
-        for (let i = 0; i < text.length; i++) {
-            const currentChar = text[i];
-            const replacement = getRandomReplacement(currentChar);
-            replacedText += replacement;
+
+        // Word replacements XD
+        let replacedText = text.split(' ').map(word => getRandomReplacement(word, wordReplacements)).join(' ');
+
+        // Letter replacements XD
+        let finalText = '';
+        for (let i = 0; i < replacedText.length; i++) {
+            const currentChar = replacedText[i];
+            const replacement = getRandomReplacement(currentChar, letterReplacements);
+            finalText += replacement;
         }
-    
+
         // Function to randomly remove characters from a string to avoid 2k limit
         function trimToLimit(text, limit) {
             while (text.length > limit) {
@@ -127,13 +131,13 @@ client.on('messageCreate', (message) => {
             }
             return text;
         }
-    
+
         const characterLimit = 2000;
-        if (replacedText.length > characterLimit) {
-            replacedText = trimToLimit(replacedText, characterLimit);
+        if (finalText.length > characterLimit) {
+            finalText = trimToLimit(finalText, characterLimit);
         }
-    
-        message.channel.send(replacedText);
+
+        message.channel.send(finalText);
     }
 
 

@@ -7,30 +7,33 @@ const wordReplacements = { // lol
     discord: ['snapchat', 'xvideos', 'myspace'],
     kill: ['eat', 'lick', 'shove'],
     yourself: ['your mom'],
-    loser: ['television', 'billionare', 'programmer', 'dropshipper'],
+    loser: ['television', 'billionaire', 'programmer', 'dropshipper'],
     american: ['queer', 'black person', 'indian'],
     hate: ['love', 'appreciate'],
     alot: ['O really need to retake 3rd grade English'],
     fucking: ['pooping', 'shagging', 'eating'],
-    retard: ['dude', 'person',],
-	faggot: ['amazing person', 'dude'],
-	kys: ['have a great day', 'enjoy life' ],
-	bitch: ['lady', 'puppy'],
-	gay : ['happy', 'rad', 'excited'],
-	dumb: ['smart', 'high iq', 'me'],
-	b: ['d', 'p', 'β'],
-	x: ['ks', '❌', 'x', 'ks', 'x'],
-	stupid: ['your likes are now private', 'super'],
-	angry: ['twitter'],
-	as: ['ass'],
-	oo: ['U', 'o', 'uu'],
-	ra: ['re'],
+    retard: ['dude', 'person'],
+    faggot: ['amazing person', 'dude'],
+    kys: ['have a great day', 'enjoy life'],
+    bitch: ['lady', 'puppy'],
+    gay: ['happy', 'rad', 'excited'],
+    dumb: ['smart', 'high iq', 'me'],
+    stupid: ['your likes are now private', 'super'],
+    angry: ['twitter'],
+};
+
+const letterReplacements = { // lol X2
+    b: ['d', 'p', 'β'],
+    x: ['ks', '❌', 'x', 'ks', 'x'],
+    as: ['ass'],
+    oo: ['U', 'o', 'uu'],
+    ra: ['re'],
     are: ['am'],
-	you: ['i', 'me'],
-	e: ['ee', 'egg', 'e'],
-	h: ['ha', 'eich', 'hee', 'h'],
-	o: ['oh', 'o'],
-	a: ['a', 'Æ', 'AA', 'a', 'e', 'a', 'ay', 'a'],
+    you: ['i', 'me'],
+    e: ['ee', 'egg', 'e'],
+    h: ['ha', 'eich', 'hee', 'h'],
+    o: ['oh', 'o'],
+    a: ['a', 'Æ', 'AA', 'a', 'e', 'a', 'ay', 'a'],
     g: ['j', 'guh', 'j', 'g', 'g', 'g'],
     p: [' p ', 'pee'],
     v: ['w', "v"],
@@ -40,13 +43,13 @@ const wordReplacements = { // lol
     is: ['ÃwÆÂ'],
     ea: ['ae'],
     t: ['⍑', 't', 't', '☂', 't'],
-    mr: ["mr beast"]
+    mr: ['mrbeast']
 };
 
-function getRandomReplacement(character) {
-    const replacements = wordReplacements[character.toLowerCase()];
+function getRandomReplacement(item, replacementsMap) {
+    const replacements = replacementsMap[item.toLowerCase()];
     if (!replacements || replacements.length === 0) {
-        return character; // Return the original character if no replacements are defined
+        return item; // Return the original item if no replacements are defined
     }
     return replacements[Math.floor(Math.random() * replacements.length)];
 }
@@ -55,7 +58,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('say')
         .setDescription('Reiterates the EXACT same thing you say totally!!!')
-        .addStringOption(option => 
+        .addStringOption(option =>
             option.setName('text')
                 .setDescription('Enter your text here')
                 .setRequired(true)),
@@ -67,11 +70,13 @@ module.exports = {
             return;
         }
 
-        let replacedText = '';
-        for (let i = 0; i < text.length; i++) {
-            const currentChar = text[i];
-            const replacement = getRandomReplacement(currentChar);
-            replacedText += replacement;
+        let replacedText = text.split(' ').map(word => getRandomReplacement(word, wordReplacements)).join(' ');
+
+        let finalText = '';
+        for (let i = 0; i < replacedText.length; i++) {
+            const currentChar = replacedText[i];
+            const replacement = getRandomReplacement(currentChar, letterReplacements);
+            finalText += replacement;
         }
 
         // Function to randomly remove characters from a string to avoid 2k limit
@@ -84,18 +89,18 @@ module.exports = {
         }
 
         const characterLimit = 2000;
-        if (replacedText.length > characterLimit) {
-            replacedText = trimToLimit(replacedText, characterLimit);
+        if (finalText.length > characterLimit) {
+            finalText = trimToLimit(finalText, characterLimit);
         }
 
-        // Send the message with the modified text
-        try {
-            await interaction.deferReply({ ephemeral: false }); // Defer the reply to avoid "Sending command" message
 
-            await interaction.editReply(replacedText); // Edit the reply with the modified text
+        try {
+            await interaction.deferReply({ ephemeral: false }); 
+
+            await interaction.editReply(finalText);
         } catch (error) {
             console.error('Failed to send message:', error);
-            await interaction.followUp({ content: 'failed to send message', ephemeral: true });
+            await interaction.followUp({ content: 'Failed to send message', ephemeral: true });
         }
     },
 };

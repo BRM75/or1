@@ -334,22 +334,28 @@ if(message.content == '%%%%%%%%%') {
         message.channel.send(`What's this?\nDiscohook is a free tool that sends messages with embeds to your Discord server. To do that it uses webhooks, a Discord feature that lets any application send messages to a channel.\nTo send messages, you need a webhook URL, you can get one via the "Integrations" tab in your server's settings.\nNote that Discohook cannot respond to user interactions, it only sends messages when you tell it to.\nAs such creating an automatic feed or custom commands is not possible with Discohook.\nDiscord bot\nDiscohook has a complementary bot, while it's not strictly required to send messages it may be helpful to have it.\nBelow is a small but incomplete overview of what the bot can do for you.\nMentioning users, roles, channels, and using emojis\nThese things have manual ways, however they're easy to mess up for someone that doesn't know what they're doing.\nIf you don't understand the above link, using Discohook's bot for this is recommended.\nThe relevant commands in the bot are user, role, channel, and emoji. Each of those will return formatting which you can copy into the editor to get the appropriate output.\nTo use Discord's default emojis, use its short name wrapped in colons. As an example, "👀" will make the eyes emoji.\nCreating reaction roles\nYou can create reaction roles with the bot using the reactionrole command, the set-up process is very simple: add a reaction to any existing message in your server, and name the role.\nNote that while other bots may allow you to configure reaction roles, Discohook's are the only ones we can give support for.\nRecover Discohook messages from your server\nThe bot is capable of turning most message links sent inside your server into Discohook links. Use the restore command with a message link to move that message from Discord into Discohook.`)
     }
 
-    if(message.content == '%lgm') {
+    if(message.content == '%lgm' || message.content == '%little' || message.content == '%liggy' || message.content == '%lgm64' || message.content == '%littleglitchy') {
         const littleresponses = require('./liggy.json')
         const littlelist = littleresponses[Math.floor(Math.random() * littleresponses.length)];
         message.channel.send(littlelist);
     }
 
-    if(message.content == '%fg64') {
+    if(message.content == '%fg64' || message.content == '%fireglitch' || message.content == '%fireglitch64' || message.content == '%fireglitchy' || message.content == '%fireiggy' || message.content == '%fireglitchy64') {
         const fireglitch = require('./fg64.json')
         const fireglitchy64 = fireglitch[Math.floor(Math.random() * fireglitch.length)];
         message.channel.send(fireglitchy64);
     }
 
-    if(message.content == '%mm7829') {
+    if(message.content == '%mm7829' || message.content == '%mm' || message.content == '%mariomario') {
         const grammer = require('./mmed.json')
         const mm = grammer[Math.floor(Math.random() * grammer.length)];
         message.channel.send(mm);
+    }
+
+    if(message.content == '%ctb' || message.content == '%ctb64' || message.content == '%reality' || message.content == '%reality64' || message.content == '%smc' || message.content == '%smc14' || message.content == '%trollsec') {
+		const ctbquotes = require('C:/Users/brm75/OneDrive/Desktop/or1/ctb.json')
+        const ctbresponse = ctbquotes[Math.floor(Math.random() * ctbquotes.length)];
+        message.channel.send(ctbresponse);
     }
 
 });

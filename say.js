@@ -10,7 +10,7 @@ const wordReplacements = { // lol
     her: ['grandma', 'raisins', 'free palestine'],
     the: ['big baby', 'dancing baby', 'og', 'wa'],
     kill: ['eat', 'lick', 'shove'],
-    and: ['shovel', 'garage'],
+    and: ['shovel', 'garage', 'خضروات'],
     yourself: ['your mom'],
     or: ['or', ']æõÀÃ='],
     loser: ['television', 'billionaire', 'programmer', 'dropshipper'],
@@ -30,37 +30,56 @@ const wordReplacements = { // lol
     hate: ['love', 'like','lust for'],
     are: ['am'],
     you: ['i', 'me', 'ogre'],
-    on: ['au']
+    on: ['au', 'AM PRO 👊✊'],
+    with: ['ou', 'cleaner', 'AM PRO 👊✊'],
+    day: ['vup vup', 'مؤيد كبير 😂😂'],
+    end: ['green', 'hat', 'water'],
+    it: ['table', 'WOW', '🚱', 'iiiIIIIiiiiIIII']
 };
 
 const letterReplacements = { // lol X2
-    b: ['d', 'p', 'β'],
+    b: ['d', 'p', 'β', 'bbbbbbb'],
     x: ['ks', '❌', 'x', 'ks', 'x'],
     as: ['ass', 'buttocks'],
     oo: ['U', 'o', 'uu', 'wÿ¤', '[][][][][][]'],
     ra: ['re', ' 𓀀 𓀁 𓀂 𓀃 𓀄'],
-    e: ['ee', 'egg', 'EA', 'zÒ—^ÿ', 'ìd¯|', '¬øcl', '👈', '👇','👉',],
+    e: ['ee', 'egg', 'EA', 'zÒ—^ÿ', 'ìd¯|', '¬øcl', '👈', '👇','👉', '🤓'],
     h: ['ha', 'eich', 'hee', 'h', 'Ê7gè÷Æ'],
-    o: ['oh', '))', '', '[[', ,'😭','💯','🤘','0','00OOOÆÆ'],
-    a: ['', 'Æ', 'AA', 'a', 'e', 'a', 'ay', '', '😁','🤣','🥰',],
+    o: ['oh', '))', '', '[[', ,'😭','💯','🤘','0','00OOOÆÆ', '😊', '🔥'],
+    a: ['', 'Æ', 'AA', 'a', '1110000OOOOO', 'e', 'a', 'ay', '', '😁','🤣','🥰', '🤡'],
     g: ['j', 'guh', 'j', 'g', 'g', 'g'],
-    p: [' p ', 'pee', 'P', 'PLAYSATION 4', 'p', 'OOO'],
+    p: [' p ', 'pee', 'P', 'PLAYSATION 4', 'p', 'O9O', '🎅'],
     v: ['w', "v"],
-    i: ["İ", "i"],
+    i: ["İ", "i", 'EEEEÜÜÜÜ'],
     w: ['m', "www", "w", "wWw"],
-    f: ['²|DÁ', 'fuck', 'ASFDFJDSKDNVK', 'PH', 'free', 'ff', "³ò>öãOv", "Àïl", "f", "f", "f", "f"],
+    f: ['²|DÁ', 'fuck', 'ASFDFJDSKDNVK', 'PH', 'free', 'ff', "³ò>öãOv", "Àïl", "f", "👲", "f", "🧏‍♀️"],
     is: ['ÃwÆÂ'],
-    ea: ['ae'],
-    d: ['b'],
+    ea: ['ae', 'OE'],
+    d: ['b', '🐱‍👤'],
     m: ['monday', 'money', 'þ&>|¨', 'ð'],
     t: ['⍑', '////', 't', '☂', 'ô>', 'teee'],
     mr: ['mrbeast'],
     c: ['ses', '', 'S', 'sex', 'k', 'ↄ'],
     1: ['E', '}', '|', '!', 'þ'],
     2: ['3', '5', '1', 'EIGHT'],
-    5: ['task manager', '💀', '👃'],
+    5: ['task manager', '💀', '👃', '🥩'],
     6: ['sex', '(six)', 'RAGED.'],
-    0: ['💯', '1', 'a lot', 'O']
+    0: ['💯', '1', 'a lot', 'O'],
+    n: ['n word', 'Ñ', 'KJFDLDGF'],
+    l: ['1', 'L', 'I', '😜', '🙌', '💋'],
+    s: ['$$$', 'SEX', 'Á', 'Microsoft store', '🍔', '🚜', 'Wii U'],
+    ':': ['SMILEYS', '💥💢', 'OROR', 'IDATx^ìÝu|', '×6p‡š4mÊM', '»Ý}Ûm»Ýn»', '.'],
+    '(': [')', 'H', '💮', '........'],
+    ')': ['}', '(', '-=--=', 'KINGS OF HEARTDOM'],
+    '[': ['808', ',,,', '⛎☦'],
+    '}': ['_', '47', '6'],
+    ']': ['TOYS', '[[[[', '🆑🅾', 'ÀPxú†À¤×ƒ5ý`–j÷'],
+    '.': ['!!!!!', 'WHHHAAATTTT', '💫💨'],
+    ',': ['E', 'playtime', 'ONION', '☢〽⚜⁉'],
+    '!': ['FACTORIAL', '💤', '(●X◡X●)'],
+    '\'': ['VVVvv', '😋'],
+    r: ['KK((', 'الحرف ر', '字母 r😂', '💦'],
+    '☹️': ['♍', 'frowningG', 'SMILE! You\'re on camera.', '059804865']
 };
 
 
